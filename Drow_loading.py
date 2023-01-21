@@ -62,11 +62,11 @@
 #----------------------------------------------------------------------#
 import os
 import time
-# take a size from user and number of repetitions
-size =int(input("input size of drawing:"))+1
+flag=0
 #Drawing by Asterisk
 os.system("cls")
 while True:
+	#Frist in Row
 	for number_of_row in range(10):
 		if number_of_row<=(3):
 			print("")
@@ -87,7 +87,29 @@ while True:
 	time.sleep(0.2)
 	os.system("cls")
 	#---------------------------------------------------------------#
+	#Frist in colum
+	for number_of_row in range(12):
+		if number_of_row>=6:
+			for number_colums in range(6):
+				if flag==1 and number_colums==4:
+					print ("* * *",end= ' ')
+					flag=0
+					break
+				elif number_colums==5:
+					print("*",end= ' ')
+				elif number_colums<=5:
+					print(" ",end=' ')
+			if number_of_row==9:
+				flag=1
+			print("")
+		else:
+			print("")
+			continue
+	time.sleep(0.2)
+	os.system("cls")
+	#---------------------------------------------------------------#
 	#Drawing by Asterisk
+	#Scond in Row
 	for number_of_row in range(10):
 		if number_of_row<=(3):
 			print("")
@@ -111,5 +133,22 @@ while True:
 			print("")
 	time.sleep(0.2)
 	os.system("cls")
-
-
+	#----------------------------------------------------------#
+	#Scond in colum
+	for number_of_row in range(6):
+		for number_colums in range(6):
+			if flag==1 and number_colums==4:
+				print ("* * *",end= ' ')
+				flag=0
+				break
+			elif number_colums==5:
+				print("*",end= ' ')
+			elif number_colums<=5:
+				print(" ",end=' ')
+		if number_of_row==0:
+			flag=1
+		print("")	
+	time.sleep(0.2)
+	os.system("cls")
+	#-------------------------------------------------#
+	
